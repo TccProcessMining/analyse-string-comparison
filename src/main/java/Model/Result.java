@@ -1,5 +1,6 @@
 package Model;
 
+
 public class Result {
     private Long id;
     private Long value;

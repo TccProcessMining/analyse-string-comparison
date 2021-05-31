@@ -10,9 +10,9 @@ public class JaroWinklerComparison extends BaseComparison{
 
     private final JaroWinklerSimilarity jaroWinklerSimilarity;
 
-    public JaroWinklerComparison(List<Result> results, JaroWinklerSimilarity jaroWinklerSimilarity) {
-        super(results);
-        this.jaroWinklerSimilarity = jaroWinklerSimilarity;
+    public JaroWinklerComparison() {
+        super();
+        this.jaroWinklerSimilarity = new JaroWinklerSimilarity();
     }
 
     private Double getResult(StringBuffer str1, StringBuffer str2){

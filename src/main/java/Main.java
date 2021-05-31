@@ -1,3 +1,4 @@
+import Comparisons.*;
 import Model.TestBase;
 import Reader.ReaderTestBase;
 
@@ -12,6 +13,17 @@ public class Main {
     public static void main(String[] args) throws IOException {
         ReaderTestBase readerCSV = new ReaderTestBase(Files.newBufferedReader(Paths.get(TEST_BASE)));
         List<TestBase> testBaseList = readerCSV.read();
+
+        CosineComparison cosineComparison = new CosineComparison();
+        cosineComparison.calculate(testBaseList);
+        FuzzyComparison fuzzyComparison = new FuzzyComparison();
+        fuzzyComparison.calculate(testBaseList);
+        IntersectionComparison intersectionComparison = new IntersectionComparison();
+        intersectionComparison.calculate(testBaseList);
+        JaccardComparison jaccardComparison = new JaccardComparison();
+        jaccardComparison.calculate(testBaseList);
+        JaroWinklerComparison jaroWinklerComparison = new JaroWinklerComparison();
+        jaroWinklerComparison.calculate(testBaseList);
         for(TestBase i : testBaseList)
             System.out.println(i.getValue());
     }

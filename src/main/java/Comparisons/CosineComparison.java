@@ -1,18 +1,16 @@
 package Comparisons;
 
-import Model.Result;
 import Model.TestBase;
 import org.apache.commons.text.similarity.CosineSimilarity;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CosineComparison extends BaseComparison{
     private final CosineSimilarity cosineSimilarity ;
-    public CosineComparison(List<Result> results, CosineSimilarity cosineSimilarity) {
-        super(results);
-        this.cosineSimilarity = cosineSimilarity;
+    public CosineComparison() {
+        super();
+        this.cosineSimilarity = new CosineSimilarity();
     }
 
     private Double getResult(StringBuffer str1, StringBuffer str2){

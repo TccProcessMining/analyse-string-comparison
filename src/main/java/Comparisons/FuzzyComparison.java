@@ -5,12 +5,13 @@ import Model.TestBase;
 import org.apache.commons.text.similarity.FuzzyScore;
 
 import java.util.List;
+import java.util.Locale;
 
 public class FuzzyComparison extends BaseComparison{
     private final FuzzyScore fuzzyScore;
-    public FuzzyComparison(List<Result> results, FuzzyScore fuzzyScore) {
-        super(results);
-        this.fuzzyScore = fuzzyScore;
+    public FuzzyComparison() {
+        super();
+        this.fuzzyScore = new FuzzyScore(Locale.forLanguageTag("pt-BR"));
     }
 
     private int getResult(StringBuffer str1, StringBuffer str2){

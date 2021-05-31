@@ -11,7 +11,7 @@ public abstract class BaseComparison {
     public BaseComparison(List<Result> results) {
         this.results = results;
     }
-
+    public BaseComparison(){}
     public List<Result> getResults() {
         return results;
     }
@@ -28,5 +28,10 @@ public abstract class BaseComparison {
 
     protected abstract void calculate(TestBase testBase);
 
+    public void calculate(List<TestBase> testBaseList){
+        for(TestBase i : testBaseList){
+            calculate(i);
+        }
+    }
 
 }

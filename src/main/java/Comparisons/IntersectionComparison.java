@@ -1,17 +1,16 @@
 package Comparisons;
 
-import Model.Result;
 import Model.TestBase;
 import org.apache.commons.text.similarity.IntersectionSimilarity;
-
-import java.util.List;
 
 public class IntersectionComparison extends BaseComparison{
     private final IntersectionSimilarity intersectionSimilarity;
 
-    public IntersectionComparison(List<Result> results, IntersectionSimilarity intersectionSimilarity) {
-        super(results);
-        this.intersectionSimilarity = intersectionSimilarity;
+    public IntersectionComparison() {
+        super();
+        this.intersectionSimilarity = new IntersectionSimilarity(charSequence -> {
+            return charSequence;
+        });
     }
 
     private int getResult(StringBuffer str1, StringBuffer str2){

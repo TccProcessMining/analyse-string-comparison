@@ -8,9 +8,9 @@ import java.util.List;
 
 public class JaccardComparison extends BaseComparison{
     private final JaccardSimilarity jaccardSimilarity;
-    public JaccardComparison(List<Result> results, JaccardSimilarity jaccardSimilarity) {
-        super(results);
-        this.jaccardSimilarity = jaccardSimilarity;
+    public JaccardComparison() {
+        super();
+        this.jaccardSimilarity = new JaccardSimilarity();
     }
 
     private Double getResult(StringBuffer str1, StringBuffer str2){
