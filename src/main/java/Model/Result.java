@@ -3,9 +3,9 @@ package Model;
 
 public class Result {
     private Long id;
-    private Long value;
+    private int value;
 
-    public Result(Long id, Long value) {
+    public Result(Long id, int value) {
         this.id = id;
         this.value = value;
     }
@@ -18,11 +18,11 @@ public class Result {
         this.id = id;
     }
 
-    public Long getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(Long value) {
+    public void setValue(int value) {
         this.value = value;
     }
 }

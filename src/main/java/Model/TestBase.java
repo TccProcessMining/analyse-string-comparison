@@ -9,7 +9,7 @@ public class TestBase {
     private String str1;
     @CsvBindByName(column = "str2")
     private String str2;
-    @CsvBindByName(column = "value")
+    @CsvBindByName(column = "value")//1..5
     private int value;
 
     public TestBase(){
