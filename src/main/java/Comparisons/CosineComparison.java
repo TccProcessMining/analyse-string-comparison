@@ -14,9 +14,7 @@ public class CosineComparison extends BaseComparison{
         this.cosineSimilarity = new CosineSimilarity();
     }
 
-
-
-    private Double getResult(StringBuffer str1, StringBuffer str2){
+    private double getResult(StringBuffer str1, StringBuffer str2){
         Map<CharSequence, Integer> leftVector = new HashMap<>();
         Map<CharSequence, Integer> rightVector = new HashMap<>();
         leftVector.put(str1,str1.length());
@@ -24,22 +22,22 @@ public class CosineComparison extends BaseComparison{
         return cosineSimilarity.cosineSimilarity(leftVector,rightVector);
     }
 
-    private int normalizeValue(Double value){ //return 1..5
-        return 1;
+    @Override
+    protected int normalizeValue(int value) {
+        return 0;
+    }
+
+    @Override
+    protected int normalizeValue(double value){ //return 1..5
+        return (int) value;
     }
 
     @Override
     public void calculate(TestBase testBase){
         StringBuffer str1 = new StringBuffer(testBase.getStr1());
         StringBuffer str2 = new StringBuffer(testBase.getStr2());
-        Double result = this.getResult(str1, str2);
+        double result = this.getResult(str1, str2);
         this.addResult(new Result(testBase.getId(), this.normalizeValue(result)));
     }
-
-    @Override
-    protected int normalizeValue(Long value) {
-        return 0;
-    }
-
 
 }
